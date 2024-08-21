@@ -21,7 +21,7 @@ repository               : "deconstructedbytes/deconstructedbytes.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "deconstructed_bytes.png"
   name             : "De Davidson"
   pronouns         : "he/him"  
   bio              : "I dig data, logs, and threats - literally & figuratively"
