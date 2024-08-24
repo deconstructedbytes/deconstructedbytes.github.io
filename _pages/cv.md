@@ -11,26 +11,27 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S. Applied Data Science, University of Michigan 9 classes completed, 3.88 GPA
+* Graduate Certificate, Penetration Testing & Ethical Hacking, SANS Technology Institute
+* Graduate Certificate, Incident Response, SANS Technology Institute
+* B.S. Information Systems Security, American Military University
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
+* 2021 - Present
+  * Telecommunications
+  * Duties includes: Incident Response, Threat Hunting, Intelligence, and Detection
   * Supervisor: The Users
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2019 - 2021
+  * Eaton Corporation
+  * Duties included: Incident Response, Analyst Development, Adversary Emulation, Threat Hunting
+  * Supervisor: 
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2017 - 2022
+  * Raytheon Cyber
+  * Duties included: Managed security, Threat Hunting, event triage, customer escalation and liason 
+  * Supervisor: 
   
 Skills
 ======
