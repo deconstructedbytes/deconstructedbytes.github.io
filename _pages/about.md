@@ -6,7 +6,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deconstructedbytes/Notebooks/main)  
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/deconstructedbytes/Notebooks.git/HEAD)
 
 A data-driven personal website
 ======
