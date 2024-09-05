@@ -251,6 +251,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _learning
+  - scope:
+      path: ""
+      type: learning
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
   # _publications
   - scope:
       path: ""
