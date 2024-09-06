@@ -15,7 +15,7 @@ AM Session
 
 Today was a continuation of exploring and implementing the unit testing of the backend functions to handle univariate data anomaly detection. The text required creating a specific testing function to handle one aspect of the desired output, specifically dataframe size. The function was set up in a concise manner, split into 3 distinct sections arrange (set up test parameters), action (execute the function with test parameters), and assert (assess if the function executed as expect). We are able to use the `@pytest.mark.parametrize` decorator to easily set up additional inputs to test execution with varying types of data. In the end we ending up with: 
 
-<code>
+```
 from src.app.models.univariate import *  
 import pandas as pd  
 import pytest  
@@ -34,7 +34,7 @@ def test_detect_univariate_statisticals_returns_correct_number_of_rows(df_input)
     df_out, weights, details = detect_univariate_statistical(df, sensivity_score, max_fraction_anomalies)  
     # Assert  
     assert(len(df) == len(df_out))  
-</code>
+```
 
 
 The book also briefly hit on how to use postman for performing integration tests between the API and the backend functions. Which provided a good starting point for how I can introduce these concepts into my development practices moving forward.
