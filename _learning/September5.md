@@ -2,7 +2,7 @@
 title: "September 5, 2024"
 collection: learning
 type: "journaling"
-permalink: /teaching/September4
+permalink: /teaching/September5
 venue: ""
 date: 2024-09-05
 location: ""
