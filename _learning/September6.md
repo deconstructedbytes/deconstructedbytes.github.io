@@ -19,6 +19,7 @@ Today was a continuation of exploring and implementing the unit testing of the b
 from src.app.models.univariate import *  
 import pandas as pd  
 import pytest  
+
 @pytest.mark.parametrize("df_input", [  
     [1,2,3,4,5,6,7,8,9,10],   
     [1],   
