@@ -5,11 +5,11 @@
 # prevent it from being included in the site.
 
 main:
+  - title: "Notebooks"
+    url: https://github.com/deconstructedbytes/Notebooks 
+  
   - title: "Learning"
-    url: /learning/
-
-  #- title: "Talks"
-  #  url: /talks/    
+    url: /learning/   
 
   - title: "Teaching"
     url: /teaching/    
