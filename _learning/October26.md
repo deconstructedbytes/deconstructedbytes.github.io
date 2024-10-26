@@ -1,10 +1,10 @@
 ---
-title: "September 9, 2024"
+title: "October 26, 2024"
 collection: learning
 type: "journaling"
-permalink: /learning/September9
+permalink: /learning/October26
 venue: ""
-date: 2024-09-09
+date: 2024-10-26
 location: ""
 ---
 
@@ -13,76 +13,33 @@ Daily learning/experience notes for tracking and comprehension checks.
 
 Reading and applying...
 ==
-Finding Ghosts in Your Data: Anomaly Detection Techniques with Examples in Python
+[Practical Threat Detection Engineering](https://github.com/PacktPublishing/Practical-Threat-Detection-Engineering)
 ==================
 
-Learned about some tests to check whether or not data follows a normal distribution; the Shapiro Wilf test, the D’Agostino’s K-squared test that checks the skewness and kurtosis of the data distribution, and lastly the Anderson-Darling test.
+I'm a sucker for [Humble Bundle]() packages, I have accumulated an impressive library of technical resources that even the most ambitious learning will struggle to get through. Ignore my book hoarding, I recently grabbed the Threat Intelligence bundle from Humble and started reading "Practical Threat Detection Engineering" by Megan Roddie, Jason DeyalSingh, and Gary Katz.
 
-- **Shapiro-Wilk**
->- This test relies on using a Null Hypothesis and p-values to determine whether or not a dataset is normally distributed. 
-- **D’Agostino**
->- D'Agostino tests focus on measuring skewness and kurtosis. Skewness can get either negative, positive or none depending on the direction of the tail. Kurtosis is the measurement of how much of the data falls within the area of the tail. 
-- **Anderson-Darling**
->- A statistic test similar to Shapiro-Wilk, but allows testing against different significance and critical values.
+In every role I've had in Cyber Security there has always been a component of creating a signature, alert, detection - whatever the popular term is at the time. Currently my team does this as a result of our Threat Hunting process one possible output from an effective hunt is new detection logic that can be used to detect threat actor behavior should it present in the environment in the future. While I do and have done this, other than reading and playing around with some Detection-as-Code material I haven't actually "learned" what it means to actual "engineer" detections. So my hope in picking up the book is to gain insight to be a better-versed and a more-cabable person who, sometimes creates detections.
 
+The first few chapters of the book focus around introducing types of attacks (BEC, DOS, Malware), attack framing models (LHM Kill-chain, Att&ck, and Unified Kill-chain), and import definitions for detection engineering and relationships with other functions with a data-driven or IT organization. I'll admit to my recollection, this was the first time I've read about the Unified Kill Chain. The LHM Kill Chain, in my opinion is good for describing phases of an attack for a big picture perspective and small non-complex attacks. For more advanced attacks the attibuting phases to the kill chain can cause confusion i.e. if I detect malware excution on a system what phase of the kill chain did I capture?? I think the answer is different depending on the scope of the incident.
 
-Checking how normal the dataset is important when using these simple statistics test for outlier detection, because the normalness of the data influences which methods are more reliable to finding outliers. Additionally, there are times when its possible to transform non-normal data to a normal distribution so our tests perform more accurately.
+Important definitions from the book:
 
-#### Code Added
+Detection Engineering -  A set of processes that enable potential threats to be
+detected within an environment. These processes encompass the end-to-end life cycle, from
+collecting detection requirements, aggregating system telemetry, and implementing and
+maintaining detection logic to validating program effectiveness.
 
-```
-from scipy.stats import shapiro, normaltest, anderson, boxcox
-import scikit_posthocs as ph
-import math
+Staleness can be used to define the continued effectiveness or value of a detection
+confidence of a detection measures the
+probability that the alert is a true positive – that is, the alert is triggered under the expected conditions
+noisiness of a detection identifies how often a
+detection creates an alert that does not result in remediation
 
-def check_shapiro(col, alhpa=0.5):
-    """
-    Statistics based hypothesis test to check for normality using
-    a null hypotheis if the p-value is low the hypothesis is rejected
-    and the test assumes the data is not normally distributed
-    """
-    return check_basic_normal_test(col, alpha, "Shapiro-Wilf test", shapiro)
-
-def check_dagostino(col, alpha=0.5):
-    """
-    Statistics test to determine how much skewness and kurtosis a dataset
-    contains. Skewness = measure of tails, longer left indicates negative skew, 
-    longer right indicates positive skew. A Dataset can also have 0 skew.
-    Kurtosis is the measure of how much of the dataset is inside the skew
-    """
-    return check_basic_normal_test(col, alpha, "D'Agostino's K^2 test", normaltest)
-
-def check_basic_normal_test(col, alpha, name, f):
-    """
-    General setup function that takes 
-    the dataset, alpha, name and specific normality checking
-    function as inputs and standardizes the output
-    """
-    stat, p = f(col)
-    return ( (p > alpha), ( f"{name} test, W = {stat}, p = {p}, alpha = {alpha}. " ) )
-
-def check_anderson(col):
-    """
-    Normality test similar to Shapiro but it performs at different 
-    significance levels
-    """
-    anderson_normal = True
-    return_str = "Anderson-Darling Test. "
-    result = anderson(col)
-    return_str = return_str += f"Result statistic: {result.statistic}"
-    for i in range(len(result.critical_values)):
-        sl, cv = result.significance_levl[i], result.critical_values[i]
-        if result.statistic < cv:
-            return_str = return_str += f"Significance Level {sl}: Critical Value = {cv}, looks normally distributed. "
-        else:
-            anderson_normal = False
-            return_str += f"Significance Level {sl}: Critical Value = {cv}, does NOT look normally distributed. "
-    return (anderson_normal, return_str)
-```
 
 
 Looking ahead
 ======
 
-I find myself getting through the text a bit slower when these topics around the math and statistics behind the scenes come up and I'm ok with that. Better to have a good understanding of why something works than just having something that works, but I can't reproduce independently or explain why it works. 
+If I'm being honest, I don't know if I'll read the entire book, I'd like to but time and prioritizies being what they are... The book deep dives into lab creation, capturing meaningful metrics, validation, career as a Detection Engineer guidance and more, which while I do find of interest aren't areas that I'm currently pursuing. I'm not consuming the information in hopes to become a Detection Engineer, but to better understand what DEs are doing, the advice they're following, how their pipelines work, the relationships between what they're doing and if there are any best practices I can adopt to the things my team is doing.
 
+To that end I will read most of it. Lots of content around the pipelines, lifecycle and usage of threat intelligence. I'm curious about how the authors define best practices around using atomic IOCs vs Behavioral patterns for detections. I look forward to reading the goods.
