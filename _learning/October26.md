@@ -29,12 +29,11 @@ detected within an environment. These processes encompass the end-to-end life cy
 collecting detection requirements, aggregating system telemetry, and implementing and
 maintaining detection logic to validating program effectiveness.
 
-Staleness can be used to define the continued effectiveness or value of a detection
-confidence of a detection measures the
-probability that the alert is a true positive – that is, the alert is triggered under the expected conditions
-noisiness of a detection identifies how often a
-detection creates an alert that does not result in remediation
-
+**Staleness** - the continued effectiveness or value of a detection  
+**Confidence** - the probability that the alert is a true positive – that is, the alert is triggered under the expected conditions  
+**Noisiness** - how often a detection creates an alert that does not result in remediation  
+**Actionability** - how easy it is for a SOC analyst to leverage the detection to either further analyze the threat or remediate it  
+**Specificity** - provides details explaining what was detected with context
 
 
 Looking ahead
